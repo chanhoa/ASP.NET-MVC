@@ -2,7 +2,6 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <h1>Hello World</h1>
-
+    <p>hihi</p>
 
 </asp:Content>

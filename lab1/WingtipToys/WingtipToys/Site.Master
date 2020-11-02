@@ -12,7 +12,7 @@
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
 
-    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
 </head>
@@ -25,7 +25,7 @@
                 <asp:ScriptReference Name="MsAjaxBundle" />
                 <asp:ScriptReference Name="jquery" />
                 <asp:ScriptReference Name="bootstrap" />
-                <%-- <asp:ScriptReference Name="respond" />--%>
+               <%-- <asp:ScriptReference Name="respond" /> --%>
                 <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
                 <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
                 <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
@@ -61,23 +61,23 @@
         </div>
         <div id="TitleContent" style="text-align: center">
             <a runat="server" href="~/">
-                <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/logo.jpg" BorderStyle="None" />
-            </a>
-            <br />
+                <asp:Image  ID="Image1" runat="server" ImageUrl="~/Images/logo.jpg" BorderStyle="None" />
+            </a>  
+            <br />  
         </div>
-        <div id="CategoryMenu" style="text-align: center">
-            <asp:ListView ID="categoryList"
-                ItemType="WingtipToys.Models.Category"
+        <div id="CategoryMenu" style="text-align: center">       
+            <asp:ListView ID="categoryList"  
+                ItemType="WingtipToys.Models.Category" 
                 runat="server"
-                SelectMethod="GetCategories">
+                SelectMethod="GetCategories" >
                 <ItemTemplate>
-                    <a href="/ProductList.aspx?id=<%#: Item.CategoryID %>">
-                        <%#: Item.CategoryName %>
+						<a href="/ProductList.aspx?id=<%#: Item.CategoryID %>">
+						<%#: Item.CategoryName %>
+						</a>
                     </a>
-                    </a>
-</b>
+                    </b>
                 </ItemTemplate>
-                <ItemSeparatorTemplate>| </ItemSeparatorTemplate>
+                <ItemSeparatorTemplate>  |  </ItemSeparatorTemplate>
             </asp:ListView>
         </div>
         <div class="container body-content">
