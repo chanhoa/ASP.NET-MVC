@@ -1,0 +1,12 @@
+﻿@model ProductsListViewModel
+
+@foreach(var p in Model.Products)
+{
+    <div>
+        <p>@p.Name</p>
+        <p>@p.Description</p>
+        <p>@p.Price</p>
+        <p>@p.Category</p>
+    </div>
+}
+<div page-model="@Model.PagingInfo" page-action="Index"></div>
