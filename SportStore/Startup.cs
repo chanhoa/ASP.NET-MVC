@@ -56,11 +56,24 @@ namespace SportStore
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                //endpoints.MapControllerRoute(
+                //    name: "default",
+                //    pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapDefaultControllerRoute();
+
+                endpoints.MapControllerRoute("pagination",
+                    "Product/Page{productPage}",
+                    new { Controller = "Home", action = "Index" });
             });
             SeedData.EnsurePopulated(app);
         }
     }
 }
+//Installing the LibMan ToolPackage
+//dotnet tool uninstall --global Microsoft.Web.LibraryManager.Cli
+//dotnet tool install --global Microsoft.Web.LibraryManager.Cli --version 2.0.96
+
+//Initializing the Example project
+//libman init -p cdnjs
+//libman installl twitter-bootstrap@4.3.1 -d wwwroot/lib/twitter-bootstrap
+//check folder wwwroot/lib co twitter-bootstrap
